@@ -39,7 +39,7 @@ public class TimeEntryController {
         return new ResponseEntity<>(timeEntryRepository.list(), OK);
     }
 
-    @GetMapping(value = "{id}")
+    @PutMapping(value = "{id}")
     public ResponseEntity<TimeEntry> update(@PathVariable long id, @RequestBody TimeEntry timeEntry) {
         TimeEntry updatedEntry = timeEntryRepository.update(id, timeEntry);
         if(updatedEntry != null){
@@ -52,6 +52,6 @@ public class TimeEntryController {
     @DeleteMapping(value = "{id}")
     public ResponseEntity<TimeEntry> delete(@PathVariable long id) {
         timeEntryRepository.delete(id);
-        return new ResponseEntity<TimeEntry>(NO_CONTENT);
+        return new ResponseEntity<>(NO_CONTENT);
     }
 }
