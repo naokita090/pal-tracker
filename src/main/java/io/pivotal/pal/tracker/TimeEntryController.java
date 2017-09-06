@@ -40,12 +40,12 @@ public class TimeEntryController {
     }
 
     @PutMapping(value = "{id}")
-    public ResponseEntity update(@PathVariable long id, @RequestBody TimeEntry timeEntry) {
+    public ResponseEntity<TimeEntry> update(@PathVariable long id, @RequestBody TimeEntry timeEntry) {
         TimeEntry updatedEntry = timeEntryRepository.update(id, timeEntry);
         if(updatedEntry != null){
-            return new ResponseEntity(updatedEntry, OK);
+            return new ResponseEntity<>(updatedEntry, OK);
         }else{
-            return new ResponseEntity(NOT_FOUND);
+            return new ResponseEntity<>(NOT_FOUND);
         }
     }
 
