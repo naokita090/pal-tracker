@@ -36,7 +36,7 @@ public class TimeEntryController {
 
     @GetMapping
     public ResponseEntity<List<TimeEntry>> list() {
-        return new ResponseEntity<List<TimeEntry>>(timeEntryRepository.list(), OK);
+        return new ResponseEntity<>(timeEntryRepository.list(), OK);
     }
 
     @PutMapping(value = "{id}")
