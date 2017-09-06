@@ -8,7 +8,6 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
 
     private HashMap<Long, TimeEntry> timeEntries = new HashMap<>();
 
-
     @Override
     public TimeEntry create(TimeEntry timeEntry) {
         timeEntry.setId(timeEntries.size() + 1);
