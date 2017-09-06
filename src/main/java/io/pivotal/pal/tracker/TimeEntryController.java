@@ -39,7 +39,7 @@ public class TimeEntryController {
         return new ResponseEntity<>(timeEntryRepository.list(), OK);
     }
 
-    @PutMapping(value = "{id}")
+    @GetMapping(value = "{id}")
     public ResponseEntity<TimeEntry> update(@PathVariable long id, @RequestBody TimeEntry timeEntry) {
         TimeEntry updatedEntry = timeEntryRepository.update(id, timeEntry);
         if(updatedEntry != null){
